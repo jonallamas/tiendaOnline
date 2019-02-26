@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
+
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+
+html {
+  font-size: 14px;
+  overflow-x: hidden;
+}
+
+body {
+  /*font-size: 1.6rem;*/
+  font-family: 'Montserrat', sans-serif;
+  /*color: #1A1A1A;*/
+  color: #646464 !important;
+  background-color: #f2f2f2;
+}
+
+a {
+  color: #0573b4;
+  text-decoration: none !important;
+}
+
+h2, h3, h4, h5, h6{
+  margin: 0px;
+}
+
+ul li{
+  color: #909191;
+}
