@@ -9,16 +9,16 @@ class Panel extends CI_Controller {
 		// Carga de los modelos
 		$this->load->model('usuario_model');
 
-		// Configuración del data_header
-		$this->data_header['titulo'] = "Panel de administración";
-		$this->data_header['seccion_menu'] = 'panel_principal';
+		//Configurando el data_header
+		$this->data_header['titulo'] = 'Panel';
+		$this->data_header['seccion_menu'] = 'tienda_principal';
 	}
 
 	public function index()
 	{
-		if($this->session->userdata('contactado')){
-			$this->load->view('template/panel_v1/header');
-			$this->load->view('panel');
+		if($this->session->userdata('conectado')){
+			$this->load->view('template/panel_v1/header', $this->data_header);
+			$this->load->view('principal');
 			$this->load->view('template/panel_v1/footer');
 		}else{
 			redirect(base_url().'panel/ingresar');
@@ -27,7 +27,7 @@ class Panel extends CI_Controller {
 
 	public function ingresar()
 	{
-		if($this->session->userdata('contactado')){
+		if($this->session->userdata('conectado')){
 			redirect(base_url().'panel');
 		}else{
 			$this->load->view('template/panel_v1/login');
@@ -35,7 +35,7 @@ class Panel extends CI_Controller {
 	}
 
 	public function ingreso(){
-		if($this->session->userdata('contactado'))
+		if($this->session->userdata('conectado'))
 		{
 			$data = array(
 				'conectado' => 1,
@@ -115,7 +115,7 @@ class Panel extends CI_Controller {
 
 	public function registro()
 	{
-		if($this->session->userdata('contactado'))
+		if($this->session->userdata('conectado'))
 		{
 			$data = array(
 				'conectado' => 1,

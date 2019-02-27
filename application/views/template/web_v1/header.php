@@ -45,10 +45,13 @@
 				<ul class="nav navbar-nav navbar-right">
 					<?php if($this->session->userdata('conectado')){ ?>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $this->session->userdata('usuario_nombre') ?> <b class="caret"></b></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $this->session->userdata('usuario_nombre'); ?> <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="<?php echo base_url(); ?>tienda">Mis compras</a></li>
 							<li><a href="<?php echo base_url(); ?>tienda/configuracion">Editar configuración</a></li>
+							<?php if($this->session->userdata('usuario_tipo') == 1){ ?>
+							<li class="active"><a href="<?php echo base_url(); ?>panel">Panel administración</a></li>
+							<?php } ?>
 							<li><a href="<?php echo base_url(); ?>tienda/salir">Cerrar sesión</a></li>
 						</ul>
 					</li>

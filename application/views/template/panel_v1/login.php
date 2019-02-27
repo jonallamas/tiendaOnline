@@ -53,6 +53,7 @@
 							<button class="btn btn-primary btn-block" id="btnIngresar">Ingresar</button>
 						</div>
 					</div>
+					<a href="<?php echo base_url(); ?>" class="text-center btn-link btn-block">Volver a la página principal</a>
 				</div>
 			</div>
 		</div>
