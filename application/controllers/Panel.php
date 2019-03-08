@@ -38,10 +38,11 @@ class Panel extends CI_Controller {
 		if($this->session->userdata('conectado'))
 		{
 			$data = array(
-				'conectado' => 1,
-				'error' 	=> 1,
-				'error_tipo' => 2,
-				'error_text' => 'Sessión iniciada'
+				'conectado' 	=> 1,
+				'usuario_tipo' 	=> $validacion->tipo_id,
+				'error' 		=> 1,
+				'error_tipo' 	=> 2,
+				'error_text' 	=> 'Sessión iniciada'
 			);
 
 			echo json_encode($data);

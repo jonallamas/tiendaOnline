@@ -110,6 +110,11 @@ CREATE TABLE IF NOT EXISTS `tienda_clientes_direcciones_envio` (
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 
+ALTER TABLE `tienda_productos` ADD `codigo` VARCHAR(16) DEFAULT NULL AFTER `precio`;
+
+ALTER TABLE `tienda_productos_categoria` ADD `codigo` VARCHAR(16) DEFAULT NULL AFTER `descripcion`;
+
+ALTER TABLE `tienda_stk_compras` ADD `codigo` VARCHAR(16) DEFAULT NULL AFTER `tipo_id`;
 
 -- Ejemplo de prueba
 

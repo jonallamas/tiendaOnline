@@ -57,7 +57,15 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="<?php if($seccion_menu == 'tienda_productos'){ echo 'active'; } ?>"><a href="<?php echo base_url(); ?>productos">Productos</a></li>
+					<li class="<?php if($seccion_menu == 'tienda_usuarios'){ echo 'active'; } ?>"><a href="<?php echo base_url(); ?>admin/usuarios/usuarios">Usuarios</a></li>
+					<!-- <li class="<?php if($seccion_menu == 'tienda_productos'){ echo 'active'; } ?>"><a href="<?php echo base_url(); ?>admin/productos/productos">Productos</a></li> -->
+					<li class="dropdown <?php if($seccion_menu == 'tienda_productos'){ echo 'active'; } ?>">
+						<a href="" class="dropdown-toggle" data-toggle="dropdown">Productos <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="<?php echo base_url(); ?>admin/productos/productos">Productos</a></li>
+							<li><a href="<?php echo base_url(); ?>admin/productos/pedidos">Pedidos</a></li>
+						</ul>
+					</li>
 					
 					<!-- Separador momentaneo -->
 					<li><a></a></li>

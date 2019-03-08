@@ -25,6 +25,13 @@ class Carrito_model extends CI_Model {
         return $this->db->update('tienda_stk_compras_egreso', $data);
     }
 
+    public function modifica_compra($data, $id)
+    {
+        $this->db->where('tienda_stk_compras.id', $id);
+
+        return $this->db->update('tienda_stk_compras', $data);
+    }
+
     public function obtener($id)
     {
         $this->db->select('tienda_stk_compras_egreso.*,

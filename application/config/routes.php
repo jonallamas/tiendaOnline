@@ -52,3 +52,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'principal';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+
+// Ruteo del URI Segment
+
+// Explicación:
+// :num coincidira con un segmento que unicamente contiene numeros
+// :any coincidira con un segmento que contenga cualquier caracter
+// $route['productos/:any'] = "catelogo/productos";

@@ -212,6 +212,12 @@ class Tienda extends CI_Controller {
 		    	$this->carrito_model->alta_compra($compra);
 		    	$compra_id = $this->db->insert_id();
 
+		    	$codigo = $this->generateRandomString(16, $compra_id).$compra_id;
+				$datos_codigo = array(
+					'codigo' 	=> $codigo
+				);
+				$this->carrito_model->modifica_compra($datos_codigo, $compra_id);
+
 		    	// Guardado de items
 		    	foreach ($this->cart->contents() as $producto) {
 		    		$data = array(
@@ -256,6 +262,18 @@ class Tienda extends CI_Controller {
 
     	// echo json_encode($data);
     }
+
+    public function generateRandomString($length, $id)
+	{
+		$id = strlen($id);
+	    $characters = '1A2B3C4D5E6F7G8H9I0J1K2L3M4N5O6P7Q8R9S0T1U2V3W4X5Y6Z7';
+	    $charactersLength = strlen($characters);
+	    $randomString = '';
+	    for ($i = 0; $i < ($length - $id); $i++) {
+	        $randomString .= $characters[rand(0, $charactersLength - 1)];
+	    }
+	    return $randomString;
+	}
 
     public function lista_mis_compras()
     {
